@@ -1,0 +1,13 @@
+﻿version: "3"
+
+services:
+    sqlserver:
+        image: "mcr.microsoft.com/mssql/server:2017-latest"
+        environment:
+            SA_PASSWORD: "pa55w0rd!"
+            ACCEPT_EULA: "Y"
+            MSSQL_PID: "Express"
+        ports:
+            - "1433:1433"
+        volumes:
+            - ./mssql:/var/lib/mysql
